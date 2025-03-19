@@ -27,20 +27,26 @@ function render(variables = {}) {
   // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
-  if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  if (variables.includeCover == false)
+    cover = `<div class='cover'><img src ="${variables.backgroundfALSA}"/></div>`;
+  const NameUser = variables.name ? `${variables.name}` : "Usuario";
+  const RoleUser = variables.role ? `${variables.role}` : "Streamer";
+  const UserCity = variables.city ? `${variables.city}` : "Barcelona";
+  const UserCountry = variables.country ? `${variables.country}` : "Spain";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
+            ${cover} 
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1> ${NameUser} </h1>
+          <h2>${RoleUser}</h2>
+          <h3>${UserCity}</h3>
+          <h3>${UserCountry}</h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://github.com/hedrickantonio"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/rodolfo-antonio-58561a312"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/hedrickantonio"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -54,12 +60,17 @@ window.onload = function() {
     // if includeCover is true the algorithm should show the cover image
     includeCover: true,
     // this is the image's url that will be used as a background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://th.bing.com/th/id/R.6ec19ee1c315c3dd1dc5b6b85ed5061a?rik=oO5I4FD6TOLbLA&pid=ImgRaw&r=0",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://avatars.githubusercontent.com/u/197240898?s=400&u=95a3cc8163996fbe150d033b8f09c7485e752cd5&v=4",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
+    backgroundfALSA:
+      "https://www.itmastersmag.com/wp-content/uploads/2021/01/shutterstock_1078387013-scaled.jpg",
+    // CREACION ROY
     twitter: null,
     github: null,
     linkedin: null,
