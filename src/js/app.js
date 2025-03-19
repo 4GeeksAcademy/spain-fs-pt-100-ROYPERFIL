@@ -33,6 +33,21 @@ function render(variables = {}) {
   const RoleUser = variables.role ? `${variables.role}` : "Streamer";
   const UserCity = variables.city ? `${variables.city}` : "Barcelona";
   const UserCountry = variables.country ? `${variables.country}` : "Spain";
+  const Tweeter = variables.twitter
+    ? `${variables.twitter}`
+    : "https://twitter.com/4geeksacademy";
+
+  const GIThub = variables.github
+    ? `${variables.github}`
+    : "https://github.com/hedrickantonio";
+
+  const linKeDin = variables.linkedin
+    ? `${variables.linkedin}`
+    : "https://www.linkedin.com/in/rodolfo-antonio-58561a312";
+
+  const InstaGram = variables.instagram
+    ? `${variables.instagram}`
+    : "https://www.instagram.com/4geeksacademyes/";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -43,10 +58,10 @@ function render(variables = {}) {
           <h3>${UserCity}</h3>
           <h3>${UserCountry}</h3>
           <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/hedrickantonio"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/rodolfo-antonio-58561a312"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://www.instagram.com/hedrickantonio"><i class="fab fa-instagram"></i></a></li>
+            <li><a href=${Tweeter}><i class="fab fa-twitter"></i></a></li>
+            <li><a href=${GIThub}><i class="fab fa-github"></i></a></li>
+            <li><a href=${linKeDin}><i class="fab fa-linkedin"></i></a></li>
+            <li><a href=${InstaGram}><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
