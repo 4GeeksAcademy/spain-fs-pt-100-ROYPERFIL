@@ -1,3 +1,4 @@
+import { left, right } from "@popperjs/core";
 import "../style/index.css";
 
 /**
@@ -30,6 +31,7 @@ function render(variables = {}) {
   if (variables.includeCover == false)
     cover = `<div class='cover'><img src ="${variables.backgroundfALSA}"/></div>`;
   const NameUser = variables.name ? `${variables.name}` : "Usuario";
+  const lastName = variables.lastName ? `${variables.lastName}` : "Usuario";
   const RoleUser = variables.role ? `${variables.role}` : "Streamer";
   const UserCity = variables.city ? `${variables.city}` : "Barcelona";
   const UserCountry = variables.country ? `${variables.country}` : "Spain";
@@ -49,15 +51,20 @@ function render(variables = {}) {
     ? `${variables.instagram}`
     : "https://www.instagram.com/4geeksacademyes/";
 
+  let posicion = variables.socialMediaPosition
+    ? `${variables.socialMediaPosition}`
+    : "position-right";
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover} 
           <img src="${variables.avatarURL}" class="photo" />
           <h1> ${NameUser} </h1>
-          <h2>${RoleUser}</h2>
+          <h3> ${lastName} </h3>
+          <h3>${RoleUser}</h3>
           <h3>${UserCity}</h3>
           <h3>${UserCountry}</h3>
-          <ul class="position-right">
+          <ul class=${posicion}>
             <li><a href=${Tweeter}><i class="fab fa-twitter"></i></a></li>
             <li><a href=${GIThub}><i class="fab fa-github"></i></a></li>
             <li><a href=${linKeDin}><i class="fab fa-linkedin"></i></a></li>
